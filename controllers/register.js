@@ -9,6 +9,7 @@ const handleRegister = (req, res, db, bcrypt) => {
         hash: hash,
         email: email
       })
+      .then(res.json('ok'))
       .into('login')
       .returning('email')
       .then(loginEmail => {
